@@ -24,7 +24,7 @@
     "react-swipeable-views": "0.12.15"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=8000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-dashboard-react.git"
+    "url": "git+https://github.com/priya1701/material-dashboard-react.git"
   },
   "keywords": [],
   "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
