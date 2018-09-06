@@ -10,7 +10,8 @@ import Notifications from "@material-ui/icons/Notifications";
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
 import UserProfile from "views/UserProfile/UserProfile.jsx";
-import TableList from "views/TableList/TableList.jsx";
+//import TableList from "views/TableList/TableList.jsx";
+import MyTable from "views/TableList/DataTable.jsx";
 import Typography from "views/Typography/Typography.jsx";
 import Icons from "views/Icons/Icons.jsx";
 //import Maps from "views/Maps/Maps.jsx";
@@ -37,7 +38,7 @@ const dashboardRoutes = [
     sidebarName: "Table List",
     navbarName: "Table List",
     icon: "content_paste",
-    component: TableList
+    component: MyTable
   },
   {
     path: "/typography",

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -39,14 +40,66 @@ const styles = {
   }
 };
 
-function TableList(props) {
-  const { classes } = props;
-  return (
-    <GridContainer>
+
+
+class MyTable extends Component {
+    // default state object
+    state = {
+      Products: []
+    };
+  
+    componentDidMount() {
+      axios
+        .get("http://13.126.150.151:3000/api/Product")
+        .then(response => {
+
+          //console.log("res.obj="+typeof response.data);
+          // create an array of contacts only with relevant data
+          // var res = JSON.parse(response);
+          // console.log("res.obj="+typeof res);
+          
+          const newProducts = response.data.map(c => {
+            return {
+                SAMPLE_PACKAGE: c.SAMPLE_PACKAGE,
+                SGTIN: c.SGTIN,
+                BATCHNUMBER: c.BATCHNUMBER,
+                PRODUCTNDC:c.PRODUCTNDC,
+                STARTMARKETINGDATE: c.STARTMARKETINGDATE,
+                NDC_EXCLUDE_FLAG: c.NDC_EXCLUDE_FLAG,
+                ENDMARKETINGDATE: c.ENDMARKETINGDATE,
+                PACKAGEDESCRIPTION: c.PACKAGEDESCRIPTION,
+                NDCPACKAGECODE: c.NDCPACKAGECODE,
+                PRODUCTID: c.PRODUCTID,
+                EXPIRYDATE: c.EXPIRYDATE,
+                MANUFACTURER: c.MANUFACTURER,
+                DRUG: c.DRUG,
+                APPLICATIONNUMBER: c.APPLICATIONNUMBER,
+                lotId: c.lotId,
+                SSCC: c.SSCC
+            };
+          });
+  
+          // create a new "state" object without mutating
+          // the original state object.
+          const newState = Object.assign({}, this.state, {
+            Products: newProducts
+          });
+          console.log("NewProduct"+newState.Products);
+          // store the new state object in the component's state
+          this.setState({newState});
+          console.log("Products:"+this.state.Products);
+        })
+        .catch(error => console.log(error));
+    }
+  
+    render() {
+      //const { classes } = props;
+      return (
+      <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={styles.cardTitleWhite}>All Products</h4>
             {/* <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
             </p> */}
@@ -54,15 +107,12 @@ function TableList(props) {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
-              tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
-              ]}
+              tableHead={["SGTIN", "Sample Package", "Product NDC", "Batch Number",
+                          "Start Marketing Date", "NDC Exclude Flag", "Package Description",
+                          "NDC Package Code", "Product ID", "Expiry Date", "Drug",
+                          "Manufacturer", "Application Number", "Lot ID", "SSCC"
+                ]}
+              tableData={this.state.Products}
             />
           </CardBody>
         </Card>
@@ -70,7 +120,7 @@ function TableList(props) {
       <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>
+            <h4 className={styles.cardTitleWhite}>
               Table on Plain Background
             </h4>
             {/* <p className={classes.cardCategoryWhite}>
@@ -106,7 +156,9 @@ function TableList(props) {
         </Card>
       </GridItem>
     </GridContainer>
-  );
-}
+        
+      );
+    }
+  }
 
-export default withStyles(styles)(TableList);
+export default withStyles(styles)(MyTable);;
