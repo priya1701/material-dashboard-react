@@ -59,35 +59,35 @@ class MyTable extends Component {
           // console.log("res.obj="+typeof res);
           
           const newProducts = response.data.map(c => {
-            return {
-                SAMPLE_PACKAGE: c.SAMPLE_PACKAGE,
-                SGTIN: c.SGTIN,
-                BATCHNUMBER: c.BATCHNUMBER,
-                PRODUCTNDC:c.PRODUCTNDC,
-                STARTMARKETINGDATE: c.STARTMARKETINGDATE,
-                NDC_EXCLUDE_FLAG: c.NDC_EXCLUDE_FLAG,
-                ENDMARKETINGDATE: c.ENDMARKETINGDATE,
-                PACKAGEDESCRIPTION: c.PACKAGEDESCRIPTION,
-                NDCPACKAGECODE: c.NDCPACKAGECODE,
-                PRODUCTID: c.PRODUCTID,
-                EXPIRYDATE: c.EXPIRYDATE,
-                MANUFACTURER: c.MANUFACTURER,
-                DRUG: c.DRUG,
-                APPLICATIONNUMBER: c.APPLICATIONNUMBER,
-                lotId: c.lotId,
-                SSCC: c.SSCC
-            };
+            return [
+                 c.SAMPLE_PACKAGE,
+                 c.SGTIN,
+                 c.BATCHNUMBER,
+                 c.PRODUCTNDC,
+                 c.STARTMARKETINGDATE,
+                 c.NDC_EXCLUDE_FLAG,
+                 c.ENDMARKETINGDATE,
+                 c.PACKAGEDESCRIPTION,
+                 c.NDCPACKAGECODE,
+                 c.PRODUCTID,
+                 c.EXPIRYDATE,
+                 c.MANUFACTURER,
+                 c.DRUG,
+                 c.APPLICATIONNUMBER,
+                 c.lotId,
+                 c.SSCC
+            ];
           });
   
           // create a new "state" object without mutating
           // the original state object.
-          const newState = Object.assign({}, this.state, {
+          const newState = Object.assign({}, {
             Products: newProducts
           });
           console.log("NewProduct"+newState.Products);
           // store the new state object in the component's state
-          this.setState({newState});
-          console.log("Products:"+this.state.Products);
+          this.setState({Products: newState.Products});
+          console.log("Products:"+Object.keys(this.state.Products));
         })
         .catch(error => console.log(error));
     }
@@ -107,10 +107,10 @@ class MyTable extends Component {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["SGTIN", "Sample Package", "Product NDC", "Batch Number",
-                          "Start Marketing Date", "NDC Exclude Flag", "Package Description",
-                          "NDC Package Code", "Product ID", "Expiry Date", "Drug",
-                          "Manufacturer", "Application Number", "Lot ID", "SSCC"
+              tableHead={["Sample Package", "SGTIN", "Batch Number", "Product NDC",
+                          "Start Marketing Date", "NDC Exclude Flag", "End Marketing Date",
+                          "Package Description", "NDC Package Code", "Product ID", "Expiry Date", "Drug",
+                          "Manufacturer","Drug", "Application Number", "Lot ID", "SSCC"
                 ]}
               tableData={this.state.Products}
             />
