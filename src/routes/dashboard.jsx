@@ -1,6 +1,6 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
+import Add from "@material-ui/icons/Add";
 // import ContentPaste from "@material-ui/icons/ContentPaste";
 //import LibraryBooks from "@material-ui/icons/LibraryBooks";
 //import BubbleChart from "@material-ui/icons/BubbleChart";
@@ -22,21 +22,21 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     sidebarName: "Dashboard",
-    navbarName: "Material Dashboard",
+    navbarName: "",
     icon: Dashboard,
     component: DashboardPage
   },
   {
     path: "/user",
-    sidebarName: "Form",
-    navbarName: "Profile",
-    icon: Person,
+    sidebarName: "Add New",
+    navbarName: "",
+    icon: Add,
     component: UserProfile
   },
   {
     path: "/table",
     sidebarName: "Table List",
-    navbarName: "Table List",
+    navbarName: "",
     icon: "content_paste",
     component: MyTable
   },
