@@ -93,13 +93,13 @@ class MyTable extends Component {
     }
   
     render() {
-      //const { classes } = props;
+      const { classes } = this.props;
       return (
       <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={styles.cardTitleWhite}>All Products</h4>
+            <h4 className={classes.cardTitleWhite}>All Products</h4>
             {/* <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
             </p> */}
@@ -117,15 +117,15 @@ class MyTable extends Component {
           </CardBody>
         </Card>
       </GridItem>
-      <GridItem xs={12} sm={12} md={12}>
+      {/* <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
-            <h4 className={styles.cardTitleWhite}>
+            <h4 className={classes.cardTitleWhite}>
               Table on Plain Background
             </h4>
-            {/* <p className={classes.cardCategoryWhite}>
+            { <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
-            </p> */}
+            </p> 
           </CardHeader>
           <CardBody>
             <Table
@@ -154,7 +154,7 @@ class MyTable extends Component {
             />
           </CardBody>
         </Card>
-      </GridItem>
+      </GridItem> */}
     </GridContainer>
         
       );

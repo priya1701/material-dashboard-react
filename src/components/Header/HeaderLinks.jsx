@@ -57,7 +57,7 @@ class HeaderLinks extends React.Component {
             <Search />
           </Button>
         </div>
-        <Button
+        {/* <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
@@ -68,8 +68,8 @@ class HeaderLinks extends React.Component {
           <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
-        </Button>
-        <div className={classes.manager}>
+        </Button> */}
+        {/* <div className={classes.manager}>
           <Button
             buttonRef={node => {
               this.anchorEl = node;
@@ -149,7 +149,7 @@ class HeaderLinks extends React.Component {
               </Grow>
             )}
           </Poppers>
-        </div>
+        </div> */}
         <Button
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}

@@ -42,7 +42,7 @@ function UserProfile(props) {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
+              <h4 className={classes.cardTitleWhite}>Add Profile</h4>
               <p className={classes.cardCategoryWhite}>Complete your profile</p>
             </CardHeader>
             <CardBody>
@@ -127,7 +127,7 @@ function UserProfile(props) {
                   />
                 </GridItem>
               </GridContainer>
-              <GridContainer>
+              {/* <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                   <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                   <CustomInput
@@ -142,14 +142,14 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-              </GridContainer>
+              </GridContainer> */}
             </CardBody>
             <CardFooter>
-              <Button color="primary">Update Profile</Button>
+              <Button color="primary">Add</Button>
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+        {/* <GridItem xs={12} sm={12} md={4}>
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -169,7 +169,7 @@ function UserProfile(props) {
               </Button>
             </CardBody>
           </Card>
-        </GridItem>
+        </GridItem> */}
       </GridContainer>
     </div>
   );
