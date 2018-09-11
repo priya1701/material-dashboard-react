@@ -1,4 +1,4 @@
-1. Go to your file project (where you've unzipped the product)
+1. Go to your file project
 2. Run in terminal
       npm install
    Then run
