@@ -9,7 +9,8 @@ import Add from "@material-ui/icons/Add";
 //import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
+//import UserProfile from "views/UserProfile/UserProfile.jsx";
+import MyForm from "views/UserProfile/AddProduct.jsx";
 //import TableList from "views/TableList/TableList.jsx";
 import MyTable from "views/TableList/DataTable.jsx";
 //import Typography from "views/Typography/Typography.jsx";
@@ -31,7 +32,7 @@ const dashboardRoutes = [
     sidebarName: "Add New",
     navbarName: "",
     icon: Add,
-    component: UserProfile
+    component: MyForm
   },
   {
     path: "/table",
