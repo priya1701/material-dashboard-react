@@ -36,7 +36,7 @@ const dashboardRoutes = [
   },
   {
     path: "/table",
-    sidebarName: "Table List",
+    sidebarName: "Product List",
     navbarName: "",
     icon: "content_paste",
     component: MyTable

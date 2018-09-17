@@ -85,6 +85,7 @@ class MyForm extends Component {
         this.setState({
             SGTIN: e.target.value
         });
+        console.log("SGTIN"+this.state.SGTIN);
     }
     onChangeBatchNo(e) {
         this.setState({
@@ -178,7 +179,7 @@ class MyForm extends Component {
             lotId: this.state.lotId,
             SSCC: this.state.SSCC
         }
-        axios.post('http://13.126.150.151:3000/api/Product', {newData})
+        axios.post('http://13.126.150.151:3000/api/Product', newData)
         .then(res => console.log(res.data));
         console.log("PostData: "+this.state);
         this.setState({
