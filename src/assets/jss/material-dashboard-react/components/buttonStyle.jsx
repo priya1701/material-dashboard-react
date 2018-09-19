@@ -5,7 +5,9 @@ import {
   successColor,
   warningColor,
   dangerColor,
-  roseColor
+  roseColor,
+  maroonColor,
+  deleteButtonBackgroundColor
 } from "assets/jss/material-dashboard-react.jsx";
 
 const buttonStyle = {
@@ -85,6 +87,16 @@ const buttonStyle = {
       "0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)",
     "&:hover,&:focus": {
       backgroundColor: roseColor,
+      boxShadow:
+        "0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)"
+    }
+  },
+  maroon: {
+    backgroundColor: deleteButtonBackgroundColor,
+    boxShadow:
+      "0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)",
+    "&:hover,&:focus": {
+      backgroundColor: maroonColor,
       boxShadow:
         "0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)"
     }

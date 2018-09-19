@@ -34,7 +34,7 @@ const styles = {
 };
 
 
-class MyForm extends Component {
+class UpdateForm extends Component {
 
     constructor(props) {
         super(props);
@@ -208,7 +208,7 @@ class MyForm extends Component {
                         <GridItem xs={12} sm={12} md={12}>
                         <Card>
                             <CardHeader color="primary">
-                            <h4 className={classes.cardTitleWhite}>Add Drug</h4>
+                            <h4 className={classes.cardTitleWhite}>Update Drug</h4>
                             </CardHeader>
                             <CardBody>
                             <GridContainer>
@@ -216,7 +216,7 @@ class MyForm extends Component {
                                 <CustomInput
                                     value={this.state.SGTIN}
                                     onChange={this.onChangeSGTIN}
-                                    labelText="SGTIN"
+                                    labelText="SGTIN to be Updated"
                                     id="SGTIN"
                                     formControlProps={{
                                     fullWidth: true
@@ -397,7 +397,35 @@ class MyForm extends Component {
                             </GridContainer>
                             </CardBody>
                             <CardFooter>
-                            <Button color="primary" onClick={this.onSubmit}>Add</Button>
+                            <Button color="success" onClick={this.onSubmit}>Update</Button>
+                            </CardFooter>
+                        </Card>
+                        </GridItem>
+
+
+
+                        <GridItem xs={12} sm={12} md={12}>
+                        <Card>
+                            <CardHeader color="primary">
+                            <h4 className={classes.cardTitleWhite}>Delete Drug</h4>
+                            </CardHeader>
+                            <CardBody>
+                            <GridContainer>
+                                <GridItem xs={12} sm={12} md={3}>
+                                <CustomInput
+                                    value={this.state.lotId}
+                                    onChange={this.onChangeLotId}
+                                    labelText="SGTIN"
+                                    id="SGTIN"
+                                    formControlProps={{
+                                    fullWidth: true
+                                    }}
+                                />
+                                </GridItem>
+                            </GridContainer>
+                            </CardBody>
+                            <CardFooter>
+                            <Button color="maroon" onClick={this.onSubmit}>Delete</Button>
                             </CardFooter>
                         </Card>
                         </GridItem>
@@ -408,4 +436,4 @@ class MyForm extends Component {
 }
 
 
-export default withStyles(styles)(MyForm);;
+export default withStyles(styles)(UpdateForm);;

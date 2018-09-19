@@ -1,6 +1,7 @@
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
+//import Dashboard from "@material-ui/icons/Dashboard";
 import Add from "@material-ui/icons/Add";
+import Update from "@material-ui/icons/Update"
 // import ContentPaste from "@material-ui/icons/ContentPaste";
 //import LibraryBooks from "@material-ui/icons/LibraryBooks";
 //import BubbleChart from "@material-ui/icons/BubbleChart";
@@ -8,9 +9,10 @@ import Add from "@material-ui/icons/Add";
 //import Notifications from "@material-ui/icons/Notifications";
 //import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views
-import DashboardPage from "views/Dashboard/Dashboard.jsx";
+//import DashboardPage from "views/Dashboard/Dashboard.jsx";
 //import UserProfile from "views/UserProfile/UserProfile.jsx";
 import MyForm from "views/UserProfile/AddProduct.jsx";
+import UpdateForm from "views/UpdateData/UpdateDelete.jsx"
 //import TableList from "views/TableList/TableList.jsx";
 import MyTable from "views/TableList/DataTable.jsx";
 //import Typography from "views/Typography/Typography.jsx";
@@ -20,28 +22,35 @@ import MyTable from "views/TableList/DataTable.jsx";
 //import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
 
 const dashboardRoutes = [
+  // {
+  //   path: "/dashboard",
+  //   sidebarName: "Dashboard",
+  //   navbarName: "",
+  //   icon: Dashboard,
+  //   component: DashboardPage
+  // },
   {
-    path: "/dashboard",
-    sidebarName: "Dashboard",
-    navbarName: "",
-    icon: Dashboard,
-    component: DashboardPage
-  },
-  {
-    path: "/user",
-    sidebarName: "Add New",
+    path: "/add",
+    sidebarName: "Add Drug",
     navbarName: "",
     icon: Add,
     component: MyForm
   },
   {
-    path: "/table",
-    sidebarName: "Product List",
+    path: "/list",
+    sidebarName: "View All Drug",
     navbarName: "",
     icon: "content_paste",
     component: MyTable
   },
-  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+  {
+    path: "/update",
+    sidebarName: "Update/Delete Drug",
+    navbarName: "",
+    icon: Update,
+    component: UpdateForm
+  },
+  { redirect: true, path: "/", to: "/add", navbarName: "Redirect" }
 ];
 
 export default dashboardRoutes;
